@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshika | Creative Web Developer Intern</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+/* ===============================
+   DESIGN OPTION 1: AURORA GLASS (CURRENT)
+   =============================== */
+:root{
+ --bg:#0f172a;--primary:#6366f1;--accent:#22d3ee;--text:#e5e7eb
+}
+
+/* ===============================
+   DESIGN OPTION 2: NEON CYBER
+   To use: uncomment this block and comment others
+   ===============================
+:root{
+ --bg:#020617;--primary:#22c55e;--accent:#ec4899;--text:#ecfeff
+}
+body{background:radial-gradient(circle at top,#020617,#000)}
+.glass{box-shadow:0 0 25px rgba(34,197,94,.4)}
+*/
+
+/* ===============================
+   DESIGN OPTION 3: SOFT PASTEL LIGHT
+   ===============================
+:root{
+ --bg:#f8fafc;--primary:#6366f1;--accent:#f472b6;--text:#0f172a
+}
+body{background:linear-gradient(120deg,#eef2ff,#fdf2f8)}
+.glass{background:rgba(255,255,255,.75)}
+*/
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text)}
+header{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at top,var(--primary),var(--bg) 60%);position:relative;overflow:hidden}
+header h1{font-size:3.5rem;font-weight:800}
+header p{margin-top:15px;font-size:1.2rem;color:#c7d2fe}
+.btn{display:inline-block;margin-top:30px;padding:14px 36px;border-radius:40px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#020617;font-weight:600;text-decoration:none;transition:.4s}
+.btn:hover{transform:translateY(-6px);box-shadow:0 25px 50px rgba(34,211,238,.4)}
+nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);background:rgba(15,23,42,.7);display:flex;justify-content:center;gap:30px;padding:18px}
+nav a{color:#c7d2fe;text-decoration:none;font-weight:500;position:relative}
+nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:.4s}
+nav a:hover::after{width:100%}
+section{max-width:1200px;margin:auto;padding:100px 20px}
+h2{text-align:center;font-size:2.6rem;margin-bottom:70px;color:var(--primary)}
+.glass{background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border-radius:22px;padding:35px;border:1px solid rgba(255,255,255,.15);transition:.4s}
+.glass:hover{transform:translateY(-10px);box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.about{text-align:center;font-size:1.1rem}
+.skills{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+.skills span{padding:14px 22px;border-radius:30px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#020617;font-weight:600;transition:.3s}
+.skills span:hover{transform:scale(1.1)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:35px}
+.timeline{position:relative;max-width:800px;margin:auto}
+.timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--primary)}
+.time{width:50%;padding:25px;position:relative}
+.time:nth-child(odd){left:0;text-align:right}
+.time:nth-child(even){left:50%}
+.time::after{content:"";position:absolute;top:30px;width:18px;height:18px;border-radius:50%;background:var(--accent)}
+.time:nth-child(odd)::after{right:-9px}
+.time:nth-child(even)::after{left:-9px}
+.contact{text-align:center;font-size:1.1rem}
+.contact a{color:var(--accent);text-decoration:none;font-weight:600}
+footer{text-align:center;padding:40px;background:#020617;color:#94a3b8}
+@media(max-width:768px){header h1{font-size:2.6rem}.timeline::before{left:10px}.time{width:100%;left:0;padding-left:40px;text-align:left}.time::after{left:1px}}
+
+/* ===== HERO ANIMATIONS ===== */
+.glow-text{
+    background:linear-gradient(90deg,var(--primary),var(--accent));
+    -webkit-background-clip:text;color:transparent;
+    animation:glow 3s infinite alternate
+}
+@keyframes glow{from{text-shadow:0 0 20px rgba(99,102,241,.4)}to{text-shadow:0 0 40px rgba(34,211,238,.7)}}
+
+.typing{
+    overflow:hidden;white-space:nowrap;border-right:3px solid var(--accent);
+    width:0;animation:typing 4s steps(30,end) forwards,blink .8s infinite
+}
+@keyframes typing{to{width:100%}}
+@keyframes blink{50%{border-color:transparent}}
+
+/* ===== FLOATING SHAPES ===== */
+.floating-shapes span{
+    position:absolute;width:120px;height:120px;border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    opacity:.25;animation:float 12s infinite ease-in-out
+}
+.floating-shapes span:nth-child(1){top:20%;left:15%}
+.floating-shapes span:nth-child(2){top:60%;left:70%;animation-duration:15s}
+.floating-shapes span:nth-child(3){top:80%;left:30%;animation-duration:18s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-60px)}}
+
+/* ===== PROJECT IMAGE CARDS ===== */
+.project-img{
+    height:180px;border-radius:18px;margin-bottom:15px;
+    background:linear-gradient(135deg,#6366f1,#22d3ee);
+    position:relative;overflow:hidden
+}
+.project-img::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at center,rgba(255,255,255,.4),transparent 60%);
+}
+
+/* ===== SCROLL FADE ===== */
+.fade{animation:fadeUp 1s ease forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="hero-content">
+        <h1 class="glow-text">Anshika Agrawal</h1>
+        <p class="typing">Creative Web Development Intern</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+    <div class="floating-shapes">
+        <span></span><span></span><span></span>
+    </div>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="glass about">
+        I am a Computer Science Engineering student and Web Development Intern with a passion for building visually appealing, responsive, and user‑centric websites. I continuously upskill myself through certifications, hands‑on projects, and real‑world learning.
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="glass skills">
+        <span>HTML5</span><span>CSS3</span><span>Responsive Design</span><span>Python</span>
+        <span>C Programming</span><span>JavaScript (Basics)</span><span>Git & GitHub</span><span>Problem Solving</span>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+        <div class="glass"><h3>Personal Portfolio</h3><p>a responsive personal portfolio website using HTML and CSS to showcase projects, skills, certifications, and education with a modern user interface.</p></div>
+        <div class="glass"><h3>Smart Posture Monitoring System (IoT)</h3><p>Developed an IoT-based posture monitoring system using sensors and embedded hardware to track posture data and provide alerts for improper posture.</p></div>
+        <div class="glass"><h3>Responsive Landing Page</h3><p>A visually appealing and fully responsive landing page using HTML and CSS, emphasizing user experience, layout structure, and cross-device compatibility.</p></div>
+    </div>
+</section>
+
+<section id="certifications">
+    <h2>Courses & Certifications</h2>
+    <div class="grid">
+        <div class="glass">HTML & CSS Bootcamp – Udemy</div>
+        <div class="glass">Complete Python Bootcamp – Udemy</div>
+        <div class="glass">Complete C for Beginners – Udemy</div>
+        <div class="glass">Aptitude for Placements – Udemy</div>
+        <div class="glass">Productivity & Time Management – Udemy</div>
+        <div class="glass">Business English – Udemy</div>
+    </div>
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+    <div class="timeline">
+        <div class="time glass"><h3>B.Tech CSE</h3><p>SGPA: 8.7 (Sem 1), 9.05 (Sem 2)</p></div>
+        <div class="time glass"><h3>Current Focus</h3><p>Web Development & Software Skills</p></div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="glass contact">
+        <p>Email: aa@gmail.com</p>
+        <p>Phone: 9999999999</p>
+        <p><a href="#">GitHub</a> | <a href="#">LinkedIn</a></p>
+    </div>
+</section>
+
+<footer>© 2026 Anshika | Web Developer Intern</footer>
+
+</body>
+</html>
