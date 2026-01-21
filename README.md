@@ -20,7 +20,7 @@ Education – Academic background
 Contact – Email, phone number, and social links
 
 # Technologies Used
-HTML5
-CSS3
-Google Fonts
-Font Awesome Icons
+- HTML5
+- CSS3
+- Google Fonts
+- Font Awesome Icons
